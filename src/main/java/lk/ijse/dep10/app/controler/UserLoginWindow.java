@@ -6,12 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import lk.ijse.dep10.app.PasswordEncoder;
 import lk.ijse.dep10.app.db.DBConnection;
 
@@ -45,18 +43,23 @@ public class UserLoginWindow {
                 txtUserName.selectAll();
                 txtUserName.requestFocus();
             }else{
-                if (!(PasswordEncoder.matches(password, rst.getString("password"))&&
-                        username.matches(rst.getString("username")))){
+                if(!username.matches(rst.getString("username"))){
                     txtUserName.getStyleClass().add("invalid");
-                    txtPassword.getStyleClass().add("invalid");
                     txtUserName.requestFocus();
                     txtUserName.selectAll();
                     return;
                 }
+                if (!(PasswordEncoder.matches(password, rst.getString("password")))){
+                    txtPassword.getStyleClass().add("invalid");
+                    txtPassword.requestFocus();
+                    txtPassword.selectAll();
+                    return;
+                }
                 Stage stage = (Stage) btnLogin.getScene().getWindow();
-                URL url = getClass().getResource("/view/AddingEmployerView.fxml");
+                URL url = getClass().getResource("/view/HomeView.fxml");
                 Scene scene = new Scene(FXMLLoader.load(url));
                 stage.setScene(scene);
+                stage.setTitle("Home Window");
 
 
                 /////////////////////

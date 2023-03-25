@@ -4,24 +4,27 @@ CREATE TABLE IF NOT EXISTS User(
     password VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Employers(
+CREATE TABLE IF NOT EXISTS Employee(
     id VARCHAR(100) PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     address VARCHAR(300) NOT NULL ,
     gender ENUM('MALE','FEMALE') NOT NULL ,
-    dob DATE NOT NULL
+    dob DATE NOT NULL,
+    salary VARCHAR(100) NOT NULL,
+    designation VARCHAR(100) NOT NULL
 
 );
+
 CREATE TABLE IF NOT EXISTS Picture(
-        employer_id VARCHAR(20) PRIMARY KEY ,
+        employee_id VARCHAR(20) PRIMARY KEY ,
         picture MEDIUMBLOB NOT NULL ,
-        CONSTRAINT fk_picture FOREIGN KEY (employer_id) REFERENCES Employers (id)
+        CONSTRAINT fk_picture FOREIGN KEY (employee_id) REFERENCES Employee (id)
 );
 CREATE TABLE IF NOT EXISTS Contact(
-    employer_id VARCHAR(20) NOT NULL ,
+    employee_id VARCHAR(20) NOT NULL ,
     contact VARCHAR(100) NOT NULL ,
     CONSTRAINT uk_contact UNIQUE KEY (contact),
-    CONSTRAINT pk_contact UNIQUE KEY (employer_id,contact)
+    CONSTRAINT pk_contact UNIQUE KEY (employee_id,contact)
 
 );
 

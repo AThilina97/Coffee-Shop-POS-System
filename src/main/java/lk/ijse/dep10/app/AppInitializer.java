@@ -44,7 +44,7 @@ public class AppInitializer extends Application {
         AnchorPane root =fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
         primaryStage.centerOnScreen();
-        primaryStage.setTitle("Sign up to the system");
+        primaryStage.setTitle(url.equals("/view/SignUpView.fxml")? "Sign up Window to the system":"Login Window to the system");
         primaryStage.show();
 
     }

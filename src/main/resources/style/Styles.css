@@ -1,3 +1,7 @@
 .invalid {
     -fx-focus-color: red !important;
 }
+.bodybg{
+    -fx-background-image: url(./images/image1.jpg);
+    -fx-background-size: 100% 100%;
+}

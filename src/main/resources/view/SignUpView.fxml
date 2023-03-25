@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="510.0" prefWidth="468.0" stylesheets="@../style/Styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controler.SignUpViewControler">
+   <children>
+      <Label alignment="CENTER" layoutX="115.0" layoutY="41.0" text="Create Admin Account" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="62.0" layoutY="97.0" spacing="15.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+         <children>
+            <Label text="Full Name">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFullName" prefHeight="24.0" prefWidth="332.0" promptText="Enter full name" VBox.vgrow="ALWAYS" />
+            <Label text="User Name">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsername" prefHeight="24.0" prefWidth="332.0" promptText="Enter user name" VBox.vgrow="ALWAYS" />
+            <Label text="Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtPassword" promptText="Enter password" />
+            <Label text="Confirm Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtConfirmPassword" promptText="Re Enter the password" />
+         </children>
+      </VBox>
+      <Button fx:id="btnCreateAdmin" layoutX="113.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnCreateAdminOnAction" prefHeight="44.0" prefWidth="201.0" text="Create Admin Account" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

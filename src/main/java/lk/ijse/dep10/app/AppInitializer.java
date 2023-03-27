@@ -73,7 +73,6 @@ public class AppInitializer extends Application {
                 tableSet.add(rst.getString(1));
             }
             boolean tableExists = tableSet.containsAll(Set.of("User","Employers", "Picture","Contact"));
-            System.out.println("hhhh");
 
             if(!tableExists) stm.execute(readDBScript());
 

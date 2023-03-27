@@ -10,26 +10,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="643.0" prefWidth="850.0" style="-fx-background-image: url(./images/image1.jpg);" stylesheets="@../style/Styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controler.HomeViewControler">
+<AnchorPane fx:id="root" prefHeight="643.0" prefWidth="850.0" stylesheets="@../style/Styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controler.HomeViewControler">
    <children>
-      <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="32.0" prefHeight="563.0" prefWidth="302.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="548.0" AnchorPane.topAnchor="80.0">
+      <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="32.0" prefHeight="563.0" prefWidth="400.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="454.0" AnchorPane.topAnchor="80.0">
          <children>
-            <Button fx:id="btnEmployeeRecords" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnEmployeeRecordsOnAction" prefHeight="138.0" prefWidth="300.0" style="-fx-background-color: #724919;" text="STAFF/EMPLYEE RECORDS" textFill="#eec89c" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnEmployeeRecords" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnEmployeeRecordsOnAction" prefHeight="138.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="STAFF/EMPLYEE RECORDS" textFill="#eec89c" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="btnCoffeeItem" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCoffeeItemOnAction" prefHeight="133.0" prefWidth="300.0" style="-fx-background-color: #724919;" text="COFFEE ITEMS" textFill="#eec89c" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnCoffeeItem" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCoffeeItemOnAction" prefHeight="133.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="COFFEE ITEMS" textFill="#eec89c" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="btnSellingDash" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSellingDashOnAction" prefHeight="131.0" prefWidth="300.0" style="-fx-background-color: #724919;" text="SELLING DASH BORD" textFill="#eec89c" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnSellingDash" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSellingDashOnAction" prefHeight="131.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="SELLING DASH BORD" textFill="#eec89c" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="btnLogout" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="130.0" prefWidth="300.0" style="-fx-background-color: #724919;" text="LOG OUT " textFill="#eec89c" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnLogout" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="130.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="LOG OUT " textFill="#eec89c" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="20.0" />
                </font>

@@ -9,6 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import lk.ijse.dep10.app.model.Coffee;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,7 +38,7 @@ public class CoffeeItemViewControler {
     private ImageView imgViewCoffee;
 
     @FXML
-    private TableView<?> tblCoffee;
+    private TableView<Coffee> tblCoffee;
 
     @FXML
     private TextField txtId;
@@ -47,6 +48,11 @@ public class CoffeeItemViewControler {
 
     @FXML
     private TextField txtPrice;
+
+    public void initialize(){
+
+
+    }
 
     @FXML
     void btnBrowsOnAction(ActionEvent event) {

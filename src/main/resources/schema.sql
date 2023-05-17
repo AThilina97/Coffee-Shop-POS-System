@@ -27,4 +27,15 @@ CREATE TABLE IF NOT EXISTS Contact(
     CONSTRAINT pk_contact UNIQUE KEY (employee_id,contact)
 
 );
+CREATE TABLE IF NOT EXISTS Coffee(
+    code VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL ,
+    price INT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS CoffeePic(
+    coffee_code VARCHAR(20) PRIMARY KEY ,
+    coffee_pic MEDIUMBLOB NOT NULL ,
+    CONSTRAINT fk_coffee_pic FOREIGN KEY (coffee_code)REFERENCES Coffee(code)
+
+);
 

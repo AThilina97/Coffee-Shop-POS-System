@@ -1,5 +1,8 @@
 package lk.ijse.dep10.app.controler;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +11,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class HomeViewControler {
 
@@ -31,6 +38,26 @@ public class HomeViewControler {
 
     @FXML
     private Label lblTime;
+
+    public void initialize(){
+
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDateTime = now.format(formatter);
+        lblDate.setText(formattedDateTime);
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> updateTime()));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+
+    }
+
+    private void updateTime() {
+        LocalTime now = LocalTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+        String formattedTime = now.format(formatter);
+        lblTime.setText(formattedTime);
+    }
 
     @FXML
     void btnCoffeeItemOnAction(ActionEvent event) throws IOException {

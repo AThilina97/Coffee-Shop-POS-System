@@ -103,8 +103,15 @@ public class HomeViewControler {
     }
 
     @FXML
-    void btnSellingDashOnAction(ActionEvent event) {
-
+    void btnSellingDashOnAction(ActionEvent event) throws IOException {
+        Stage stage =(Stage) btnLogout.getScene().getWindow();
+        URL url = getClass().getResource("/view/SellingDashbord.fxml");
+        Scene scene = new Scene(FXMLLoader.load(url));
+        stage.setScene(scene);
+        stage.setTitle("Selling Dash Bord");
+        stage.centerOnScreen();
+        stage.show();
+        stage.setMaximized(true);
     }
 
 }

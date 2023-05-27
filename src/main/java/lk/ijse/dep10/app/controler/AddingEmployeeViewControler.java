@@ -153,7 +153,7 @@ public class AddingEmployeeViewControler {
                 Employee employee = new Employee(id, name, address, Gender.valueOf(gender),
                         dob.toLocalDate(),null,designation,salary,null,null);
 
-                Image image = new Image("/images/noimage.png",200,200,true,true);
+                Image image = new Image("/images/noimage.png",80,80,true,true);
                 ImageView imageView = new ImageView(image);
                 employee.setImage(imageView);
 
@@ -162,7 +162,7 @@ public class AddingEmployeeViewControler {
                 if(rstPic.next()){
                     Blob picture = rstPic.getBlob("picture");
                     employee.setPicture(picture);
-                    Image image1 = new Image(picture.getBinaryStream(), 200, 200, true, true);
+                    Image image1 = new Image(picture.getBinaryStream(), 80, 80, true, true);
                     ImageView imageView1 = new ImageView(image1);
                     employee.setImage(imageView1);
                 }

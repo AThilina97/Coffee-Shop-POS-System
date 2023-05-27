@@ -62,4 +62,5 @@ public class Coffee implements Serializable {
     public void setImgBlob(Blob imgBlob) {
         this.imgBlob = imgBlob;
     }
+
 }

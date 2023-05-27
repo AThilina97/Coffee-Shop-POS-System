@@ -19,7 +19,7 @@
    <children>
       <VBox alignment="CENTER_LEFT" layoutY="95.0" prefHeight="494.0" prefWidth="633.0" spacing="10.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="843.0" AnchorPane.topAnchor="95.0">
          <children>
-            <Button fx:id="btnEmployeeRecords" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnEmployeeRecordsOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="STAFF/EMPLYEE RECORDS" textFill="#edc89d" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnEmployeeRecords" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnEmployeeRecordsOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #543118;" text="STAFF/EMPLYEE RECORDS" textFill="#edc89d" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnCoffeeItem" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCoffeeItemOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="COFFEE ITEMS" textFill="#edc89d" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnCoffeeItem" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnCoffeeItemOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #543118;" text="COFFEE ITEMS" textFill="#edc89d" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -35,7 +35,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnSellingDash" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSellingDashOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="SELLING DASH BORD" textFill="#edc89d" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnSellingDash" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnSellingDashOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #543118;" text="SELLING DASH BORD" textFill="#edc89d" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnLogout" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #724919;" text="LOG OUT " textFill="#edc89d" VBox.vgrow="ALWAYS">
+            <Button fx:id="btnLogout" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: #543118;" text="LOG OUT " textFill="#edc89d" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -74,7 +74,7 @@
                   <Image url="@../images/home.png" />
                </image>
             </ImageView>
-            <Label text="Home Window" textFill="#5e4028">
+            <Label text="Home Window" textFill="#834a24">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

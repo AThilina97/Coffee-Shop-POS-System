@@ -3,19 +3,36 @@ package lk.ijse.dep10.app.controler;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.dep10.app.db.DBConnection;
 
+import javax.imageio.ImageIO;
+import javax.sql.rowset.serial.SerialBlob;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -97,7 +114,7 @@ public class SellingDashbordControler {
     private String quantity="";
 
     public void initialize(){
-
+        loadBookDetails();
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formattedDateTime = now.format(formatter);
@@ -109,6 +126,49 @@ public class SellingDashbordControler {
 
         System.out.println(quantity);
 
+    }
+    public void loadBookDetails() {
+        Connection connection = DBConnection.getInstance().getConnection();
+        try {
+            Statement stm = connection.createStatement();
+            ResultSet rs = stm.executeQuery("SELECT * FROM Coffee");
+            PreparedStatement stmCoffeePic = connection.prepareStatement("SELECT * FROM CoffeePic WHERE coffee_code=?");
+            while (rs.next()){
+                String code = rs.getString("code");
+                String coffeeName = rs.getString("name");
+                int price = rs.getInt("price");
+                stmCoffeePic.setString(1,code);
+                ResultSet rstPic = stmCoffeePic.executeQuery();
+                if(rstPic.next()) {
+                    Blob coffeePic = rstPic.getBlob("coffee_pic");
+                    ImageView preview = new ImageView();
+                    preview.setFitHeight(250);
+                    preview.setFitWidth(200);
+                    preview.setImage(new Image(coffeePic.getBinaryStream(), 200.0, 200.0, true, true));
+                    Button btnBook = new Button();
+                    Label label = new Label(coffeeName);
+                    label.setTextFill(Color.WHITE);
+                    label.setMinWidth(100.0);
+                    label.setTextAlignment(TextAlignment.CENTER);
+                    VBox vBox = new VBox();
+                    vBox.getChildren().addAll(btnBook, label);
+//                    btnBook.setText(coffeeName);
+                    btnBook.setPadding(new Insets(20.0, 20.0, 20.0, 20.0));
+                    btnBook.setGraphic(preview);
+                    btnBook.setCursor(Cursor.HAND);
+                    btnBook.setOnAction(actionEvent -> {
+                        lblCoffeCode.setText(code);
+                        lblCoffeeName.setText(coffeeName);
+                        lblPrice.setText(price+"");
+                    });
+                    flowPane.getChildren().add(vBox);
+                }
+            }
+
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,"Something went wrong. Failed to load Coffees").showAndWait();
+            e.printStackTrace();
+        }
     }
     private void updateTime() {
         LocalTime now = LocalTime.now();

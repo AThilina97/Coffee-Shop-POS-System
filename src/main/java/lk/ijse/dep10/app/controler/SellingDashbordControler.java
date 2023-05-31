@@ -14,17 +14,20 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.dep10.app.db.DBConnection;
+import lk.ijse.dep10.app.model.CoffeeDetailsDashBord;
 
 import javax.imageio.ImageIO;
 import javax.sql.rowset.serial.SerialBlob;
@@ -110,11 +113,18 @@ public class SellingDashbordControler {
     private Label lblTotalPrice;
 
     @FXML
-    private TableView<?> tblCoffee;
+    private TableView<CoffeeDetailsDashBord> tblCoffee;
     private String quantity="";
 
     public void initialize(){
         loadBookDetails();
+
+        tblCoffee.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
+        tblCoffee.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
+        tblCoffee.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        tblCoffee.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("quantyty"));
+        tblCoffee.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("total"));
+
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String formattedDateTime = now.format(formatter);
@@ -142,13 +152,17 @@ public class SellingDashbordControler {
                 if(rstPic.next()) {
                     Blob coffeePic = rstPic.getBlob("coffee_pic");
                     ImageView preview = new ImageView();
-                    preview.setFitHeight(250);
-                    preview.setFitWidth(200);
+                    preview.setFitHeight(230);
+                    preview.setFitWidth(212);
                     preview.setImage(new Image(coffeePic.getBinaryStream(), 200.0, 200.0, true, true));
                     Button btnBook = new Button();
+                    btnBook.setStyle("-fx-background-color: #753606;");
+                    btnBook.getStyleClass().add("invalid");
+                    btnBook.getStyleClass().add("buttonHover");
+                    btnBook.getStyleClass().add("buttonClick");
                     Label label = new Label(coffeeName);
                     label.setTextFill(Color.WHITE);
-                    label.setMinWidth(100.0);
+                    label.setFont(new Font(20));
                     label.setTextAlignment(TextAlignment.CENTER);
                     VBox vBox = new VBox();
                     vBox.getChildren().addAll(btnBook, label);
@@ -177,9 +191,24 @@ public class SellingDashbordControler {
         lblTime.setText(formattedTime);
     }
 
-
+int totalPrice=0;
     @FXML
     void btnAddOnAction(ActionEvent event) {
+        String price =lblPrice.getText();
+        String quantity =lblQuantity.getText();
+        if(Integer.parseInt(quantity)==0){
+            lblQuantity.setTextFill(Color.RED);
+            return;
+        }
+        int total=Integer.parseInt(price)*Integer.parseInt(quantity);
+        totalPrice+=total;
+        lblTotalPrice.setText("Total Price: Rs:"+totalPrice+".00");
+
+        CoffeeDetailsDashBord coffeeBuy =new CoffeeDetailsDashBord(lblCoffeCode.getText(),lblCoffeeName.getText(),price+".00",quantity,total+".00");
+        tblCoffee.getItems().add(coffeeBuy);
+        btnClear.fire();
+
+
 
     }
 
@@ -189,12 +218,19 @@ public class SellingDashbordControler {
         lblCoffeeName.setText("No Item");
         lblPrice.setText("Rs :000.00");
         lblQuantity.setText("00");
+        lblQuantity.setTextFill(Color.WHITE);
         quantity="";
 
     }
 
     @FXML
     void btnRemoveOnAction(ActionEvent event) {
+        CoffeeDetailsDashBord selectedItem = tblCoffee.getSelectionModel().getSelectedItem();
+        String totalofSelected = selectedItem.getTotal();
+        totalPrice-=Float.parseFloat(totalofSelected);
+        lblTotalPrice.setText("Total Price: Rs:"+totalPrice+".00");
+        tblCoffee.getItems().remove(selectedItem);
+
 
     }
 
@@ -209,6 +245,7 @@ public class SellingDashbordControler {
     void btn1OnAction(ActionEvent event) {
         quantity=quantity+1;
         lblQuantity.setText(quantity);
+        lblQuantity.setTextFill(Color.WHITE);
 
     }
 
@@ -216,6 +253,7 @@ public class SellingDashbordControler {
     void btn2OnAction(ActionEvent event) {
         quantity=quantity+2;
         lblQuantity.setText(quantity);
+        lblQuantity.setTextFill(Color.WHITE);
 
     }
 
@@ -223,60 +261,64 @@ public class SellingDashbordControler {
     void btn3OnAction(ActionEvent event) {
         quantity=quantity+3;
         lblQuantity.setText(quantity);
-
+        lblQuantity.setTextFill(Color.WHITE);
     }
 
     @FXML
     void btn4OnAction(ActionEvent event) {
         quantity=quantity+4;
         lblQuantity.setText(quantity);
-
+        lblQuantity.setTextFill(Color.WHITE);
     }
 
     @FXML
     void btn5OnAction(ActionEvent event) {
         quantity=quantity+5;
         lblQuantity.setText(quantity);
-
+        lblQuantity.setTextFill(Color.WHITE);
     }
 
     @FXML
     void btn6OnAction(ActionEvent event) {
         quantity=quantity+6;
         lblQuantity.setText(quantity);
-
+        lblQuantity.setTextFill(Color.WHITE);
     }
 
     @FXML
     void btn7OnAction(ActionEvent event) {
         quantity=quantity+7;
         lblQuantity.setText(quantity);
-
+        lblQuantity.setTextFill(Color.WHITE);
     }
 
     @FXML
     void btn8OnAction(ActionEvent event) {
         quantity=quantity+8;
         lblQuantity.setText(quantity);
-
+        lblQuantity.setTextFill(Color.WHITE);
     }
 
     @FXML
     void btn9OnAction(ActionEvent event) {
         quantity=quantity+9;
         lblQuantity.setText(quantity);
-
+        lblQuantity.setTextFill(Color.WHITE);
     }
 
     @FXML
     void btnXOnAction(ActionEvent event) {
         lblQuantity.setText("00");
+        lblQuantity.setTextFill(Color.WHITE);
         quantity="";
     }
 
     @FXML
     void btnBillOnAction(ActionEvent event) {
+        totalPrice=0;
+        lblTotalPrice.setText("Total Price :Rs:0.00");
         btnClear.fire();
+        tblCoffee.getItems().clear();
 
     }
 

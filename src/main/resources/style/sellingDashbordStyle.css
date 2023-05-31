@@ -1,0 +1,16 @@
+.root{
+    -fx-background-image: url("/images/coffeeBack5.jpg");
+    -fx-background-size: 100% 100%;
+}
+#btn0,#btn1,#btn2,#btn3,#btn4,#btn5,#btn6,#btn7,#btn8,#btn9{
+    -fx-background-color: #460e03;
+}
+#btn0:hover,#btn1:hover,#btn2:hover,#btn3:hover,#btn4:hover,#btn5:hover,#btn6:hover,#btn7:hover,#btn8:hover,#btn9:hover{
+    -fx-background-color: #380303;
+}
+#btnX:hover{
+    -fx-background-color: #700000;
+}
+#btnRemove:hover{
+    -fx-background-color: #6e0101;
+}

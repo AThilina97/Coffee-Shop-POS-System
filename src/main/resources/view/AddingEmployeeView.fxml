@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="762.0" prefWidth="1314.0" style="-fx-background-color: #e8d198;" stylesheets="@../style/Styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controler.AddingEmployeeViewControler">
+<AnchorPane prefHeight="762.0" prefWidth="1314.0" style="-fx-background-color: #e8d198;" stylesheets="@../style/sellingDashbordStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controler.AddingEmployeeViewControler">
    <children>
       <Button fx:id="btnNewEmployee" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnNewEmployeeOnAction" prefHeight="40.0" prefWidth="162.0" style="-fx-background-color: #1f901d; -fx-border-color: green;" text="+ New Employee" textFill="WHITE" AnchorPane.leftAnchor="10.0">
          <font>
@@ -27,7 +27,7 @@
          <children>
             <HBox spacing="5.0">
                <children>
-                  <Label prefWidth="160.0" text="Employee ID : ">
+                  <Label prefWidth="160.0" text="Employee ID : " textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -36,7 +36,7 @@
             </HBox>
             <HBox spacing="5.0">
                <children>
-                  <Label prefHeight="16.0" prefWidth="160.0" text="Name : ">
+                  <Label prefHeight="16.0" prefWidth="160.0" text="Name : " textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -45,7 +45,7 @@
             </HBox>
             <HBox prefWidth="140.0" spacing="5.0">
                <children>
-                  <Label prefWidth="160.0" text="Address : ">
+                  <Label prefWidth="160.0" text="Address : " textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -54,7 +54,7 @@
             </HBox>
             <HBox spacing="5.0">
                <children>
-                  <Label fx:id="lblGender" prefWidth="160.0" text="Gender : ">
+                  <Label fx:id="lblGender" prefWidth="160.0" text="Gender : " textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -68,7 +68,7 @@
             </HBox>
             <HBox spacing="5.0">
                <children>
-                  <Label fx:id="lblDob" prefWidth="160.0" text="Date of birth : ">
+                  <Label fx:id="lblDob" prefWidth="160.0" text="Date of birth : " textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -77,7 +77,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="5.0">
                <children>
-                  <Label prefWidth="160.0" text="Contact Number : ">
+                  <Label prefWidth="160.0" text="Contact Number : " textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -91,7 +91,7 @@
          <children>
             <HBox spacing="5.0">
                <children>
-                  <Label prefWidth="160.0" text="Designation :">
+                  <Label prefWidth="160.0" text="Designation :" textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -100,7 +100,7 @@
             </HBox>
             <HBox spacing="5.0">
                <children>
-                  <Label prefHeight="16.0" prefWidth="160.0" text="Negotiated Sallary : ">
+                  <Label prefHeight="16.0" prefWidth="160.0" text="Negotiated Sallary : " textFill="#e8b912">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>
@@ -111,7 +111,7 @@
       </VBox>
       <HBox layoutX="17.0" layoutY="437.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
          <children>
-            <Label prefHeight="16.0" prefWidth="160.0" text="Photo : ">
+            <Label prefHeight="16.0" prefWidth="160.0" text="Photo : " textFill="#e8b912">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
@@ -160,7 +160,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Label alignment="CENTER" layoutX="183.0" layoutY="14.0" prefHeight="44.0" prefWidth="656.0" text="E m p l o y e e    D e t a i l s " textFill="#fcff4d" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="475.0">
+      <Label alignment="CENTER" layoutX="183.0" layoutY="14.0" prefHeight="44.0" prefWidth="656.0" text="E m p l o y e e    D e t a i l s " textFill="#da9809" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="475.0">
          <font>
             <Font name="DejaVu Sans Bold" size="35.0" />
          </font>

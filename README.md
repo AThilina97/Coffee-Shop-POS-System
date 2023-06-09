@@ -9,7 +9,7 @@ The Coffee Shop POS System is a Java-based application that effectively manages 
 - **Cofee categories Management**: Easily add, update, and remove coffee items from the menu with their respective prices and categories.
 - **Employee Management**: Easily can add a new customer, update details, and remove.
 - **Home Window**: To navigate the specific windows
-## Technolgies
+## Technologies
 - Java
 - JavaFX
 - CSS

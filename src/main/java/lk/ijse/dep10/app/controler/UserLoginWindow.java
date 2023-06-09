@@ -27,6 +27,11 @@ public class UserLoginWindow {
     @FXML
     private TextField txtUserName;
 
+    public  void initialize(){
+        txtUserName.setText("thili97");
+        txtPassword.setText("@Thili97");
+    }
+
     @FXML
     void btnLoginOnAction(ActionEvent event) {
         String username = txtUserName.getText();

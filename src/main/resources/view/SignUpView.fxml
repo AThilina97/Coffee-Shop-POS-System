@@ -8,43 +8,42 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="510.0" prefWidth="468.0" stylesheets="@../style/Styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controler.SignUpViewControler">
+<AnchorPane prefHeight="510.0" prefWidth="468.0" stylesheets="@../style/sign-up.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep10.app.controler.SignUpViewControler">
    <children>
-      <Label alignment="CENTER" layoutX="115.0" layoutY="41.0" text="Create Admin Account" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0">
+      <Label alignment="CENTER" layoutX="115.0" layoutY="41.0" text="Create Admin Account" textFill="#ffff0e" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="115.0">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
       <VBox layoutX="62.0" layoutY="97.0" spacing="15.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
          <children>
-            <Label text="Full Name">
+            <Label text="Full Name" textFill="#ddd606">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <TextField fx:id="txtFullName" prefHeight="24.0" prefWidth="332.0" promptText="Enter full name" VBox.vgrow="ALWAYS" />
-            <Label text="User Name">
+            <Label text="User Name" textFill="#ddd606">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <TextField fx:id="txtUsername" prefHeight="24.0" prefWidth="332.0" promptText="Enter user name" VBox.vgrow="ALWAYS" />
-            <Label text="Password">
+            <Label text="Password" textFill="#ddd606">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <PasswordField fx:id="txtPassword" promptText="Enter password" />
-            <Label text="Confirm Password">
+            <Label text="Confirm Password" textFill="#ddd606">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <PasswordField fx:id="txtConfirmPassword" promptText="Re Enter the password" />
          </children>
       </VBox>
-      <Button fx:id="btnCreateAdmin" layoutX="113.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnCreateAdminOnAction" prefHeight="44.0" prefWidth="201.0" text="Create Admin Account" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0">
+      <Button fx:id="btnCreateAdmin" layoutX="113.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnCreateAdminOnAction" prefHeight="44.0" prefWidth="201.0" style="-fx-background-color: yellow;" text="Create Admin Account" textFill="#da0404" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0">
          <font>
             <Font size="15.0" />
          </font>
